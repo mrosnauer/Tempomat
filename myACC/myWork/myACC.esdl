@@ -11,7 +11,7 @@ writes resources.CarMessages.power, resources.CarMessages.brake, CarMessages.acc
 	@generated("blockdiagram")
 	@thread
 	public void control() {
-		if (accButtonLogic_instance.calc(((DriverMessages.powerDriver > 0.0) || (0.0 < DriverMessages.brakeDriver)), DriverMessages.accButtonPressed)) {
+		if ((DriverMessages.powerDriver > 0.0) || (0.0 < DriverMessages.brakeDriver)) {
 			CarMessages.power = DriverMessages.powerDriver; // Main/control 1/if-then 1
 			CarMessages.brake = DriverMessages.brakeDriver; // Main/control 1/if-then 2
 		} else {
@@ -19,5 +19,8 @@ writes resources.CarMessages.power, resources.CarMessages.brake, CarMessages.acc
 			CarMessages.brake = 0.0; // Main/control 1/if-else 2
 		} // Main/control 1
 		CarMessages.accActive = deactivateOnBrake_instance.calc(CarMessages.accActive, DriverMessages.brakeDriver); // Main/control 2
+		if (accButtonLogic_instance.calc(((DriverMessages.powerDriver > 0.0) || (0.0 < DriverMessages.brakeDriver)), DriverMessages.accButtonPressed)) {
+			CarMessages.accActive = true; // Main/control 3/if-then 1
+		} // Main/control 3
 	}
 }

@@ -2,7 +2,7 @@ classType myWork.myDriver
 blockdiagramSpecification Main {
 	methodBody drive {
 		outPin active {
-			connection_5, connection_6, connection_7, connection_9
+			connection_5, connection_6, connection_7, connection_9, connection_11
 		}
 	}
 	simpleIdentifier p at (561, 105) {
@@ -69,10 +69,20 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier acitvate at (551, 395) {
+	simpleIdentifier accButtonDriver at (551, 395) {
 		label at (0, -1)
-		outPin sequenceCall {
+		outPin {
+			connection_12
+		}
+		sequenceCall {
 			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.accButtonPressed at (731, 395) {
+		label at (0, -1)
+		inPin connection_12
+		sequenceCall {
+			inPin connection_11
 		}
 	}
 }

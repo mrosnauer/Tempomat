@@ -2,7 +2,7 @@ classType myWork.myACC
 blockdiagramSpecification Main {
 	methodBody control {
 		outPin active {
-			connection_1, connection_18
+			connection_1, connection_18, connection_29
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (-59, 105) {
@@ -46,7 +46,7 @@ blockdiagramSpecification Main {
 		}
 	}
 	ifElse at (331, 151) {
-		inPin connection_23
+		inPin connection_28
 		ifControlFlowOutPin {
 			connection_9, connection_11
 		}
@@ -65,7 +65,7 @@ blockdiagramSpecification Main {
 			bendpoints (40, 0)
 		}
 		outPin {
-			connection_21
+			connection_28, connection_21
 		}
 	}
 	greater at (51, 106) {
@@ -84,7 +84,7 @@ blockdiagramSpecification Main {
 	}
 	less at (51, 166) {
 		inPin connection_6 {
-			bendpoints (30, 0), (30, 10), (60, 10)
+			bendpoints (30, 0), (30, 20)
 		}
 		inPin connection_7
 		outPin {
@@ -145,28 +145,49 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier accButtonLogic_instance at (181, 141) size (14, 8) {
+	complexIdentifier accButtonLogic_instance at (231, -29) size (14, 8) {
 		label at (0, 1)
 		methodCall myWork.accButtonLogic.calc {
-			argumentPin driverAction at (left, 0) connection_21
-			argumentPin accButtonAction at (left, 4) connection_22 {
-				bendpoints (170, 0), (170, -100)
+			argumentPin driverAction at (left, 5) connection_21 {
+				bendpoints (30, 0), (30, -130)
 			}
+			argumentPin accButtonAction at (left, 0) connection_38
 			returnPin at (right, 0) {
-				connection_23
+				connection_30
 			}
 			sequenceCall {
 				inPin
 			}
 		}
 	}
-	simpleIdentifier resources.DriverMessages.accButtonPressed at (-49, 285) {
-		label at (0, -1)
+	simpleIdentifier resources.DriverMessages.accButtonPressed at (-59, -25) {
+		label at (0, 9)
 		outPin {
-			connection_22
+			connection_38
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.accActive at (581, -5) {
+		label at (0, -1)
+		inPin connection_25
+		outPin sequenceCall {
+			inPin connection_33
+		}
+	}
+	literal Boolean "true" at (471, -7) size (49, 0) {
+		outPin {
+			connection_25
+		}
+	}
+	if at (391, -29) {
+		inPin connection_30
+		ifControlFlowOutPin {
+			connection_33
+		}
+		sequenceCall {
+			inPin connection_29
 		}
 	}
 }
