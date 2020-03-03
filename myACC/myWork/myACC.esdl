@@ -3,7 +3,7 @@ import resources.CarMessages;
 import resources.DriverMessages;
 
 static class myACC
-reads resources.DriverMessages.powerDriver, resources.DriverMessages.brakeDriver
+reads resources.DriverMessages.powerDriver, resources.DriverMessages.brakeDriver, CarMessages.v, DriverMessages.up, DriverMessages.down, DriverMessages.activate
 writes resources.CarMessages.power, resources.CarMessages.brake {
 	@generated("blockdiagram")
 	@thread

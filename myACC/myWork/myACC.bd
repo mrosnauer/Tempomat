@@ -116,4 +116,28 @@ blockdiagramSpecification Main {
 			connection_16, connection_14
 		}
 	}
+	simpleIdentifier resources.CarMessages.v at (131, 265) {
+		label at (0, -1)
+		outPin sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.up at (131, 325) {
+		label at (0, -1)
+		outPin sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.down at (121, 375) {
+		label at (0, -1)
+		outPin sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.activate at (121, 435) {
+		label at (0, -1)
+		outPin sequenceCall {
+			inPin
+		}
+	}
 }
