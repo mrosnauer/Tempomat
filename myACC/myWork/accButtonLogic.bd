@@ -1,0 +1,70 @@
+classType myWork.accButtonLogic
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_7
+		}
+	}
+	methodArgumentIdentifier calc.driverAction at (301, 175) {
+		label at (0, -1)
+		outPin {
+			connection_5
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc.accButtonAction at (301, 235) {
+		label at (0, -1)
+		outPin {
+			connection_1
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	equal at (591, 236) {
+		inPin connection_1
+		inPin connection_2 {
+			bendpoints (180, 0), (180, -40)
+		}
+		outPin {
+			connection_3
+		}
+	}
+	literal Boolean "true" at (311, 293) size (49, 0) {
+		outPin {
+			connection_2
+		}
+	}
+	and at (691, 166) {
+		inPin connection_6
+		inPin connection_3 {
+			bendpoints (30, 0), (30, -60)
+		}
+		outPin {
+			connection_8
+		}
+	}
+	not at (481, 161) {
+		inPin connection_5 {
+			bendpoints (70, 0), (70, -10)
+		}
+		outPin {
+			connection_6
+		}
+	}
+	return at (831, 175) {
+		label at (0, 0)
+		inPin connection_9
+		sequenceCall {
+			inPin connection_7
+		}
+	}
+	not at (771, 171) {
+		inPin connection_8
+		outPin {
+			connection_9
+		}
+	}
+}

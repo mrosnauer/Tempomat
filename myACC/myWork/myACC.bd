@@ -5,7 +5,7 @@ blockdiagramSpecification Main {
 			connection_1, connection_18
 		}
 	}
-	simpleIdentifier resources.DriverMessages.powerDriver at (71, 105) {
+	simpleIdentifier resources.DriverMessages.powerDriver at (-59, 105) {
 		label at (0, -1)
 		outPin {
 			connection_10, connection_3
@@ -14,7 +14,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.DriverMessages.brakeDriver at (71, 185) {
+	simpleIdentifier resources.DriverMessages.brakeDriver at (-59, 185) {
 		label at (0, -1)
 		outPin {
 			connection_12, connection_20, connection_7
@@ -26,7 +26,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.CarMessages.power at (531, 75) {
 		label at (0, -1)
 		inPin connection_10 {
-			bendpoints (0, -30), (350, -30)
+			bendpoints (0, -30)
 		}
 		sequenceCall {
 			inPin connection_9 {
@@ -37,7 +37,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.CarMessages.brake at (531, 235) {
 		label at (0, -1)
 		inPin connection_12 {
-			bendpoints (0, 50), (350, 50)
+			bendpoints (0, 50)
 		}
 		sequenceCall {
 			inPin connection_11 {
@@ -46,7 +46,7 @@ blockdiagramSpecification Main {
 		}
 	}
 	ifElse at (331, 151) {
-		inPin connection_2
+		inPin connection_23
 		ifControlFlowOutPin {
 			connection_9, connection_11
 		}
@@ -57,18 +57,18 @@ blockdiagramSpecification Main {
 			inPin connection_1
 		}
 	}
-	or at (241, 146) {
+	or at (131, 146) {
 		inPin connection_4 {
-			bendpoints (10, 0), (10, 30)
+			bendpoints (40, 0)
 		}
 		inPin connection_8 {
-			bendpoints (10, 0), (10, -10)
+			bendpoints (40, 0)
 		}
 		outPin {
-			connection_2
+			connection_21
 		}
 	}
-	greater at (181, 106) {
+	greater at (51, 106) {
 		inPin connection_3
 		inPin connection_5 {
 			bendpoints (30, 0), (30, -20)
@@ -77,12 +77,12 @@ blockdiagramSpecification Main {
 			connection_4
 		}
 	}
-	literal Numeric "0.0" at (71, 143) size (49, 0) {
+	literal Numeric "0.0" at (-59, 143) size (49, 0) {
 		outPin {
 			connection_6, connection_5
 		}
 	}
-	less at (181, 166) {
+	less at (51, 166) {
 		inPin connection_6 {
 			bendpoints (30, 0), (30, 10), (60, 10)
 		}
@@ -135,7 +135,7 @@ blockdiagramSpecification Main {
 				bendpoints (100, 0), (100, 10)
 			}
 			argumentPin brake at (left, 5) connection_20 {
-				bendpoints (0, 50), (-50, 50), (-50, 330)
+				bendpoints (0, 50), (80, 50), (80, 330)
 			}
 			returnPin at (right, 0) {
 				connection_19
@@ -143,6 +143,30 @@ blockdiagramSpecification Main {
 			sequenceCall {
 				inPin
 			}
+		}
+	}
+	complexIdentifier accButtonLogic_instance at (181, 141) size (14, 8) {
+		label at (0, 1)
+		methodCall myWork.accButtonLogic.calc {
+			argumentPin driverAction at (left, 0) connection_21
+			argumentPin accButtonAction at (left, 4) connection_22 {
+				bendpoints (170, 0), (170, -100)
+			}
+			returnPin at (right, 0) {
+				connection_23
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.DriverMessages.accButtonPressed at (-49, 285) {
+		label at (0, -1)
+		outPin {
+			connection_22
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }
