@@ -29,7 +29,7 @@ blockdiagramSpecification Main {
 			bendpoints (290, 0), (290, -50)
 		}
 		outPin {
-			connection_10
+			connection_12
 		}
 	}
 	not at (481, 161) {
@@ -40,15 +40,9 @@ blockdiagramSpecification Main {
 	}
 	return at (831, 175) {
 		label at (0, 0)
-		inPin connection_11
+		inPin connection_12
 		sequenceCall {
 			inPin connection_7
-		}
-	}
-	not at (761, 171) {
-		inPin connection_10
-		outPin {
-			connection_11
 		}
 	}
 }

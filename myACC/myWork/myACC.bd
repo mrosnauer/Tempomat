@@ -2,7 +2,7 @@ classType myWork.myACC
 blockdiagramSpecification Main {
 	methodBody control {
 		outPin active {
-			connection_1, connection_29, connection_54
+			connection_1, connection_59, connection_29, connection_66, connection_72, connection_70
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (-59, 105) {
@@ -126,7 +126,7 @@ blockdiagramSpecification Main {
 				bendpoints (0, 50), (80, 50), (80, 330)
 			}
 			returnPin at (right, 0) {
-				connection_55
+				connection_67
 			}
 			sequenceCall {
 				inPin
@@ -187,11 +187,109 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.accActive at (741, 465) {
-		label at (0, -1)
-		inPin connection_55
+	complexIdentifier incDecTargetSpeed_instance at (81, 591) size (14, 9) {
+		label at (0, 1)
+		methodCall myWork.incDecTargetSpeed.calc {
+			argumentPin up at (left, 0) connection_58
+			argumentPin down at (left, 3) connection_57 {
+				bendpoints (121, 0)
+			}
+			argumentPin target_speed at (left, 6) connection_61
+			returnPin at (right, 0) {
+				connection_60
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.DriverMessages.up at (-89, 595) {
+		label at (0, -41)
+		outPin {
+			connection_58
+		}
 		sequenceCall {
-			inPin connection_54
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.down at (-89, 625) {
+		label at (0, -1)
+		outPin {
+			connection_57
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier target_speed at (251, 595) {
+		label at (0, -1)
+		inPin connection_60
+		outPin sequenceCall {
+			inPin connection_59
+		}
+	}
+	simpleIdentifier target_speed at (-99, 655) {
+		label at (0, -1)
+		inPin outPin {
+			connection_61
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.accButtonOffPressed at (-59, -95) {
+		label at (0, -1)
+		outPin {
+			connection_74
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier internalActive at (571, 465) {
+		label at (0, -1)
+		inPin connection_67
+		outPin sequenceCall {
+			inPin connection_66
+		}
+	}
+	simpleIdentifier internalActive at (311, -95) {
+		label at (0, -1)
+		inPin connection_76
+		outPin sequenceCall {
+			inPin connection_75 {
+				bendpoints (60, 0), (60, -20)
+			}
+		}
+	}
+	simpleIdentifier internalActive at (841, 15) {
+		label at (0, -1)
+		inPin outPin {
+			connection_71
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.accActive at (951, 15) {
+		label at (0, -1)
+		inPin connection_71
+		sequenceCall {
+			inPin connection_70
+		}
+	}
+	if at (121, -99) {
+		inPin connection_74
+		ifControlFlowOutPin {
+			connection_75
+		}
+		sequenceCall {
+			inPin connection_72
+		}
+	}
+	literal Boolean "false" at (241, -97) size (49, 0) {
+		outPin {
+			connection_76
 		}
 	}
 }

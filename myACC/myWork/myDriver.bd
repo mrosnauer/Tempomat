@@ -2,7 +2,7 @@ classType myWork.myDriver
 blockdiagramSpecification Main {
 	methodBody drive {
 		outPin active {
-			connection_5, connection_6, connection_7, connection_9, connection_11
+			connection_5, connection_7, connection_9, connection_11, connection_13, connection_15
 		}
 	}
 	simpleIdentifier p at (561, 105) {
@@ -14,11 +14,6 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	literal Numeric "0.0" at (561, 193) size (49, 0) {
-		outPin {
-			connection_4
-		}
-	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (731, 105) {
 		label at (0, -1)
 		inPin connection_2
@@ -28,9 +23,9 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier resources.DriverMessages.brakeDriver at (731, 195) {
 		label at (0, -1)
-		inPin connection_4
+		inPin connection_16
 		sequenceCall {
-			inPin connection_6
+			inPin connection_15
 		}
 	}
 	simpleIdentifier resources.DriverMessages.up at (731, 265) {
@@ -83,6 +78,31 @@ blockdiagramSpecification Main {
 		inPin connection_12
 		sequenceCall {
 			inPin connection_11
+		}
+	}
+	simpleIdentifier accButtonOffDriver at (551, 455) {
+		label at (0, -1)
+		outPin {
+			connection_14
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.accButtonOffPressed at (731, 455) {
+		label at (0, -1)
+		inPin connection_14
+		sequenceCall {
+			inPin connection_13
+		}
+	}
+	simpleIdentifier b at (561, 195) {
+		label at (0, -1)
+		outPin {
+			connection_16
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }
