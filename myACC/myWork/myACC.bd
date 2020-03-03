@@ -67,7 +67,7 @@ blockdiagramSpecification Main {
 			bendpoints (40, 0)
 		}
 		outPin {
-			connection_28, connection_21
+			connection_28
 		}
 	}
 	greater at (51, 106) {
@@ -90,7 +90,7 @@ blockdiagramSpecification Main {
 		}
 		inPin connection_7
 		outPin {
-			connection_8
+			connection_8, connection_21
 		}
 	}
 	simpleIdentifier resources.CarMessages.power at (741, 355) {
@@ -137,7 +137,7 @@ blockdiagramSpecification Main {
 		label at (0, 1)
 		methodCall myWork.accButtonLogic.calc {
 			argumentPin driverAction at (left, 5) connection_21 {
-				bendpoints (30, 0), (30, -130)
+				bendpoints (0, 20), (-7, 20), (-7, 40), (106, 40), (106, -80), (110, -80), (110, -150)
 			}
 			argumentPin accButtonAction at (left, 0) connection_38
 			returnPin at (right, 0) {
