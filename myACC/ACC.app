@@ -2,6 +2,7 @@ application {
 	class myCar.myCar
 	class myWork.myDriver
 	class myWork.myACC
+	class myWork.automatedDriver
 }
 schedule {
 	startup {
@@ -9,7 +10,7 @@ schedule {
 	shutdown {
 	}
 	task Task0 priority 0 period 10ms delay 0ms {
-		process myWork.myDriver.drive
+		process myWork.automatedDriver.calc
 		process myWork.myACC.control
 		process myCar.myCar.calc
 	}

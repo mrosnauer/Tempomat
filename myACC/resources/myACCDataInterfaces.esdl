@@ -6,4 +6,6 @@ data interface DriverMessages {
 	boolean up = false;
 	boolean down = false;
 	boolean accButtonPressed = false;
+	boolean accButtonOffPressed = false;
+	
 }

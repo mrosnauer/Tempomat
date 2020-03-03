@@ -1,0 +1,165 @@
+classType myWork.automatedDriver
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_2, connection_10, connection_12, connection_29, connection_31, connection_33
+		}
+	}
+	simpleIdentifier resources.TimeTick.dTs at (141, 185) {
+		label at (0, -1)
+		inPin outPin {
+			connection_1
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier time at (281, 265) {
+		label at (0, -1)
+		inPin connection_3 {
+			bendpoints (80, 0), (80, 130), (-90, 130)
+		}
+		outPin {
+			connection_5, connection_6, connection_7, connection_8, connection_28, connection_4
+		}
+		sequenceCall {
+			inPin connection_2
+		}
+	}
+	addition at (331, 186) {
+		inPin connection_1
+		inPin connection_4
+		outPin {
+			connection_3
+		}
+	}
+	simpleIdentifier driver_acceleration at (641, 111) {
+		label at (0, 1)
+		inPin connection_5 {
+			bendpoints (250, 0), (250, -140)
+		}
+		outPin {
+			connection_11
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier driver_brake at (641, 201) {
+		label at (0, 1)
+		inPin connection_6 {
+			bendpoints (250, 0), (250, -50)
+		}
+		outPin {
+			connection_13
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier driver_acc_requested at (641, 291) {
+		label at (0, 1)
+		inPin connection_7 {
+			bendpoints (250, 0), (250, 40)
+		}
+		outPin {
+			connection_20
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier driver_increase_speed_acc at (641, 381) {
+		label at (0, 1)
+		inPin connection_8 {
+			bendpoints (250, 0), (250, 130)
+		}
+		outPin {
+			connection_21
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier driver_decrease_speed_acc at (641, 471) {
+		label at (0, 1)
+		inPin connection_28 {
+			bendpoints (250, 0), (250, 170), (310, 170)
+		}
+		outPin {
+			connection_22
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.powerDriver at (941, 125) {
+		label at (0, -1)
+		inPin connection_11
+		sequenceCall {
+			inPin connection_10
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (941, 215) {
+		label at (0, -1)
+		inPin connection_13
+		sequenceCall {
+			inPin connection_12
+		}
+	}
+	simpleIdentifier resources.DriverMessages.accButtonPressed at (941, 315) {
+		label at (0, -1)
+		inPin connection_34
+		sequenceCall {
+			inPin connection_33
+		}
+	}
+	simpleIdentifier resources.DriverMessages.up at (941, 405) {
+		label at (0, -1)
+		inPin connection_32
+		sequenceCall {
+			inPin connection_31
+		}
+	}
+	simpleIdentifier resources.DriverMessages.down at (941, 475) {
+		label at (0, -1)
+		inPin connection_30
+		sequenceCall {
+			inPin connection_29
+		}
+	}
+	equal at (811, 306) {
+		inPin connection_20
+		inPin connection_23 {
+			bendpoints (100, 0), (100, -120), (250, -120), (250, -150)
+		}
+		outPin {
+			connection_34
+		}
+	}
+	literal Numeric "1.0" at (461, 473) size (49, 0) {
+		outPin {
+			connection_24, connection_27, connection_23
+		}
+	}
+	equal at (821, 396) {
+		inPin connection_21
+		inPin connection_24 {
+			bendpoints (100, 0), (100, -50), (310, -50)
+		}
+		outPin {
+			connection_32
+		}
+	}
+	equal at (821, 466) {
+		inPin connection_22 {
+			bendpoints (0, -20)
+		}
+		inPin connection_27 {
+			bendpoints (100, 0), (100, 60), (310, 60)
+		}
+		outPin {
+			connection_30
+		}
+	}
+}
