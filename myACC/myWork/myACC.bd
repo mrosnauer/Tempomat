@@ -73,20 +73,20 @@ blockdiagramSpecification Main {
 	greater at (51, 106) {
 		inPin connection_3
 		inPin connection_5 {
-			bendpoints (40, 0), (40, -30)
+			bendpoints (30, 0), (30, -20)
 		}
 		outPin {
 			connection_4
 		}
 	}
-	literal Numeric "0.0" at (-69, 153) size (49, 0) {
+	literal Numeric "0.0" at (-59, 143) size (49, 0) {
 		outPin {
 			connection_6, connection_5
 		}
 	}
 	less at (51, 166) {
 		inPin connection_6 {
-			bendpoints (40, 0), (40, 10)
+			bendpoints (30, 0), (30, 20)
 		}
 		inPin connection_7
 		outPin {
@@ -239,31 +239,6 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier resources.DriverMessages.accButtonOffPressed at (-59, -95) {
 		label at (0, -1)
-		inPin outPin {
-			connection_51
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	complexIdentifier incDecTargetSpeed_instance at (81, 591) size (14, 9) {
-		label at (0, 1)
-		methodCall myWork.incDecTargetSpeed.calc {
-			argumentPin up at (left, 0) connection_58
-			argumentPin down at (left, 3) connection_57 {
-				bendpoints (121, 0)
-			}
-			argumentPin target_speed at (left, 6) connection_61
-			returnPin at (right, 0) {
-				connection_60
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-	}
-	simpleIdentifier resources.DriverMessages.up at (-89, 595) {
-		label at (0, -41)
 		outPin {
 			connection_74
 		}
