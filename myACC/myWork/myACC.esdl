@@ -7,7 +7,7 @@ reads resources.DriverMessages.powerDriver, resources.DriverMessages.brakeDriver
 writes resources.CarMessages.power, resources.CarMessages.brake, CarMessages.accActive {
 	deactivateOnBrake deactivateOnBrake_instance;
 	accButtonLogic accButtonLogic_instance;
-	boolean internalActive;
+	public boolean internalActive;
 
 	@generated("blockdiagram")
 	@thread
