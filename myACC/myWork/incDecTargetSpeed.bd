@@ -1,0 +1,122 @@
+classType myWork.incDecTargetSpeed
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_7, connection_17
+		}
+	}
+	methodArgumentIdentifier calc.up at (191, 175) {
+		label at (0, -1)
+		outPin {
+			connection_8
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc.down at (181, 335) {
+		label at (0, -1)
+		outPin {
+			connection_18
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc.target_speed at (371, 165) {
+		label at (0, -1)
+		outPin {
+			connection_10
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	return at (571, 235) {
+		label at (0, 0)
+		inPin connection_11 {
+			bendpoints (30, 0), (30, 30)
+		}
+		sequenceCall {
+			inPin connection_2 {
+				bendpoints (230, 0)
+			}
+		}
+	}
+	if at (281, 111) {
+		inPin connection_8 {
+			bendpoints (70, 0), (70, -60)
+		}
+		ifControlFlowOutPin {
+			connection_2
+		}
+		sequenceCall {
+			inPin connection_7
+		}
+	}
+	addition at (461, 196) {
+		inPin connection_10 {
+			bendpoints (40, 0), (40, 30)
+		}
+		inPin connection_9 {
+			bendpoints (20, 0), (20, -10)
+		}
+		outPin {
+			connection_11
+		}
+	}
+	simpleIdentifier const_number at (371, 225) {
+		label at (0, -1)
+		outPin {
+			connection_9
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	subtraction at (541, 336) {
+		inPin connection_14
+		inPin connection_13 {
+			bendpoints (100, 0)
+		}
+		outPin {
+			connection_16
+		}
+	}
+	simpleIdentifier const_number at (401, 385) {
+		label at (0, -1)
+		outPin {
+			connection_13
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc.target_speed at (401, 335) {
+		label at (0, -1)
+		outPin {
+			connection_14
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	return at (581, 345) {
+		label at (0, 0)
+		inPin connection_16
+		sequenceCall {
+			inPin connection_15 {
+				bendpoints (0, -10)
+			}
+		}
+	}
+	if at (311, 331) {
+		inPin connection_18
+		ifControlFlowOutPin {
+			connection_15
+		}
+		sequenceCall {
+			inPin connection_17
+		}
+	}
+}
