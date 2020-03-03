@@ -3,10 +3,11 @@ import resources.CarMessages;
 import resources.DriverMessages;
 
 static class myACC
-reads resources.DriverMessages.powerDriver, resources.DriverMessages.brakeDriver, CarMessages.accActive, CarMessages.v, DriverMessages.up, DriverMessages.down, DriverMessages.accButtonPressed
+reads resources.DriverMessages.powerDriver, resources.DriverMessages.brakeDriver, CarMessages.v, DriverMessages.up, DriverMessages.down, DriverMessages.accButtonPressed
 writes resources.CarMessages.power, resources.CarMessages.brake, CarMessages.accActive {
 	deactivateOnBrake deactivateOnBrake_instance;
 	accButtonLogic accButtonLogic_instance;
+	boolean internalActive;
 
 	@generated("blockdiagram")
 	@thread
@@ -18,9 +19,9 @@ writes resources.CarMessages.power, resources.CarMessages.brake, CarMessages.acc
 			CarMessages.power = 0.0; // Main/control 1/if-else 1
 			CarMessages.brake = 0.0; // Main/control 1/if-else 2
 		} // Main/control 1
-		CarMessages.accActive = deactivateOnBrake_instance.calc(CarMessages.accActive, DriverMessages.brakeDriver); // Main/control 2
 		if (accButtonLogic_instance.calc(((DriverMessages.powerDriver > 0.0) || (0.0 < DriverMessages.brakeDriver)), DriverMessages.accButtonPressed)) {
-			CarMessages.accActive = true; // Main/control 3/if-then 1
-		} // Main/control 3
+			internalActive = true; // Main/control 2/if-then 1
+		} // Main/control 2
+		CarMessages.accActive = deactivateOnBrake_instance.calc(internalActive, DriverMessages.brakeDriver); // Main/control 3
 	}
 }

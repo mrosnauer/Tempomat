@@ -2,7 +2,7 @@ classType myWork.myACC
 blockdiagramSpecification Main {
 	methodBody control {
 		outPin active {
-			connection_1, connection_18, connection_29
+			connection_1, connection_29, connection_54
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (-59, 105) {
@@ -23,30 +23,32 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.power at (531, 75) {
+	simpleIdentifier resources.CarMessages.power at (721, 145) {
 		label at (0, -1)
 		inPin connection_10 {
-			bendpoints (0, -30)
+			bendpoints (0, 39)
 		}
 		sequenceCall {
 			inPin connection_9 {
-				bendpoints (70, 0), (70, -100)
+				bendpoints (70, 0), (70, -51), (200, -51), (200, -50)
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.brake at (531, 235) {
+	simpleIdentifier resources.CarMessages.brake at (731, 235) {
 		label at (0, -1)
 		inPin connection_12 {
-			bendpoints (0, 50)
+			bendpoints (0, 48)
 		}
 		sequenceCall {
 			inPin connection_11 {
-				bendpoints (70, 0), (70, 60)
+				bendpoints (70, 0), (70, 38), (200, 38), (200, 40)
 			}
 		}
 	}
-	ifElse at (331, 151) {
-		inPin connection_28
+	ifElse at (331, 171) {
+		inPin connection_28 {
+			bendpoints (0, 10), (160, 10)
+		}
 		ifControlFlowOutPin {
 			connection_9, connection_11
 		}
@@ -91,54 +93,40 @@ blockdiagramSpecification Main {
 			connection_8
 		}
 	}
-	simpleIdentifier resources.CarMessages.power at (531, 345) {
+	simpleIdentifier resources.CarMessages.power at (741, 355) {
 		label at (0, -1)
 		inPin connection_16 {
 			bendpoints (20, 0), (20, -50)
 		}
 		sequenceCall {
 			inPin connection_15 {
-				bendpoints (0, 140)
+				bendpoints (0, 130)
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.brake at (531, 395) {
+	simpleIdentifier resources.CarMessages.brake at (741, 405) {
 		label at (0, -1)
 		inPin connection_14
 		sequenceCall {
 			inPin connection_13 {
-				bendpoints (0, 190)
+				bendpoints (0, 180)
 			}
 		}
 	}
-	literal Numeric "0.0" at (421, 393) size (49, 0) {
+	literal Numeric "0.0" at (631, 403) size (49, 0) {
 		outPin {
 			connection_16, connection_14
-		}
-	}
-	simpleIdentifier resources.CarMessages.accActive at (91, 455) {
-		label at (0, -1)
-		inPin connection_19 {
-			bendpoints (0, -40), (-410, -40)
-		}
-		outPin {
-			connection_17
-		}
-		sequenceCall {
-			inPin connection_18
 		}
 	}
 	complexIdentifier deactivateOnBrake_instance at (351, 461) size (14, 8) {
 		label at (0, 1)
 		methodCall myWork.deactivateOnBrake.calc {
-			argumentPin accActiveIn at (left, 0) connection_17 {
-				bendpoints (100, 0), (100, 10)
-			}
+			argumentPin accActiveIn at (left, 0) connection_51
 			argumentPin brake at (left, 5) connection_20 {
 				bendpoints (0, 50), (80, 50), (80, 330)
 			}
 			returnPin at (right, 0) {
-				connection_19
+				connection_55
 			}
 			sequenceCall {
 				inPin
@@ -169,25 +157,41 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.accActive at (581, -5) {
-		label at (0, -1)
-		inPin connection_25
-		outPin sequenceCall {
-			inPin connection_33
-		}
-	}
 	literal Boolean "true" at (471, -7) size (49, 0) {
 		outPin {
-			connection_25
+			connection_50
 		}
 	}
 	if at (391, -29) {
 		inPin connection_30
 		ifControlFlowOutPin {
-			connection_33
+			connection_49
 		}
 		sequenceCall {
 			inPin connection_29
+		}
+	}
+	simpleIdentifier internalActive at (571, -5) {
+		label at (0, -1)
+		inPin connection_50
+		outPin sequenceCall {
+			inPin connection_49
+		}
+	}
+	simpleIdentifier internalActive at (201, 465) {
+		label at (0, -1)
+		inPin outPin {
+			connection_51
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.accActive at (741, 465) {
+		label at (0, -1)
+		inPin connection_55
+		sequenceCall {
+			inPin connection_54
 		}
 	}
 }
