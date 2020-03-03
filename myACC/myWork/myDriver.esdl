@@ -2,7 +2,7 @@ package myWork;
 import resources.DriverMessages;
 
 static class myDriver
-writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.up, DriverMessages.down, DriverMessages.activate {
+writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.up, DriverMessages.down, DriverMessages.active {
 	characteristic real p = 0.0;
 	characteristic boolean speed_gain = false;
 	characteristic boolean speed_loss = false;
@@ -15,6 +15,6 @@ writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.up
 		DriverMessages.brakeDriver = 0.0; // Main/drive 2
 		DriverMessages.up = speed_gain; // Main/drive 3
 		DriverMessages.down = speed_loss; // Main/drive 4
-		DriverMessages.activate = acitvate; // Main/drive 5
+		DriverMessages.active = acitvate; // Main/drive 5
 	}
 }

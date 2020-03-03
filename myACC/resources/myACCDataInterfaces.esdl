@@ -5,5 +5,5 @@ data interface DriverMessages {
 	real brakeDriver = 0.0;
 	boolean up = false;
 	boolean down = false;
-	boolean activate = false;
+	boolean active = false;
 }
