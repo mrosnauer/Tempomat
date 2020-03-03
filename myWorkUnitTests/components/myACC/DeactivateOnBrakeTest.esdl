@@ -1,12 +1,19 @@
 package components.myACC;
 
-import assertLib.Assert;
 
-static class DeactivateOnBrakeTests {
+import assertLib.Assert;
+import resources.DriverMessages;
+
+static class DeactivateOnBrakeTests 
+reads  DriverMessages.active
+writes DriverMessages.brakeDriver, DriverMessages.active {
 	
 	
 	@Test
-	public void test1() {
+	@thread
+	public void activeACCAndBrake() {
+		resources.DriverMessages.active = true;
+		resources.DriverMessages.brakeDriver = 5.0;
 		
 	}
 	
