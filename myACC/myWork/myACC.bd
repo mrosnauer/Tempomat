@@ -2,7 +2,7 @@ classType myWork.myACC
 blockdiagramSpecification Main {
 	methodBody control {
 		outPin active {
-			connection_1
+			connection_1, connection_28
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (71, 105) {
@@ -88,7 +88,7 @@ blockdiagramSpecification Main {
 		}
 		inPin connection_7
 		outPin {
-			connection_8
+			connection_26, connection_8
 		}
 	}
 	simpleIdentifier resources.CarMessages.power at (531, 345) {
@@ -134,10 +134,41 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.DriverMessages.activate at (121, 435) {
+	simpleIdentifier resources.DriverMessages.^active at (421, 525) {
 		label at (0, -1)
-		outPin sequenceCall {
-			inPin
+		inPin connection_31
+		sequenceCall {
+			inPin connection_30 {
+				bendpoints (30, 0), (30, 30)
+			}
+		}
+	}
+	equal at (241, 466) {
+		inPin connection_26 {
+			bendpoints (20, 0)
+		}
+		inPin connection_27
+		outPin {
+			connection_29
+		}
+	}
+	literal Boolean "true" at (141, 483) size (49, 0) {
+		outPin {
+			connection_27
+		}
+	}
+	if at (291, 471) {
+		inPin connection_29
+		ifControlFlowOutPin {
+			connection_30
+		}
+		sequenceCall {
+			inPin connection_28
+		}
+	}
+	literal Boolean "false" at (331, 523) size (49, 0) {
+		outPin {
+			connection_31
 		}
 	}
 }
