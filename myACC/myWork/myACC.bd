@@ -2,7 +2,7 @@ classType myWork.myACC
 blockdiagramSpecification Main {
 	methodBody control {
 		outPin active {
-			connection_1, connection_28
+			connection_1, connection_18
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (71, 105) {
@@ -17,7 +17,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.DriverMessages.brakeDriver at (71, 185) {
 		label at (0, -1)
 		outPin {
-			connection_12, connection_7
+			connection_12, connection_20, connection_7
 		}
 		sequenceCall {
 			inPin
@@ -88,7 +88,7 @@ blockdiagramSpecification Main {
 		}
 		inPin connection_7
 		outPin {
-			connection_26, connection_8
+			connection_8
 		}
 	}
 	simpleIdentifier resources.CarMessages.power at (531, 345) {
@@ -116,59 +116,33 @@ blockdiagramSpecification Main {
 			connection_16, connection_14
 		}
 	}
-	simpleIdentifier resources.CarMessages.v at (131, 265) {
+	simpleIdentifier resources.CarMessages.accActive at (91, 455) {
 		label at (0, -1)
-		outPin sequenceCall {
-			inPin
+		inPin connection_19 {
+			bendpoints (0, -40), (-410, -40)
 		}
-	}
-	simpleIdentifier resources.DriverMessages.up at (131, 325) {
-		label at (0, -1)
-		outPin sequenceCall {
-			inPin
+		outPin {
+			connection_17
 		}
-	}
-	simpleIdentifier resources.DriverMessages.down at (121, 375) {
-		label at (0, -1)
-		outPin sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.^active at (421, 525) {
-		label at (0, -1)
-		inPin connection_31
 		sequenceCall {
-			inPin connection_30 {
-				bendpoints (30, 0), (30, 30)
+			inPin connection_18
+		}
+	}
+	complexIdentifier deactivateOnBrake_instance at (351, 461) size (14, 8) {
+		label at (0, 1)
+		methodCall myWork.deactivateOnBrake.calc {
+			argumentPin accActiveIn at (left, 0) connection_17 {
+				bendpoints (100, 0), (100, 10)
 			}
-		}
-	}
-	equal at (241, 466) {
-		inPin connection_26 {
-			bendpoints (20, 0)
-		}
-		inPin connection_27
-		outPin {
-			connection_29
-		}
-	}
-	literal Boolean "true" at (141, 483) size (49, 0) {
-		outPin {
-			connection_27
-		}
-	}
-	if at (291, 471) {
-		inPin connection_29
-		ifControlFlowOutPin {
-			connection_30
-		}
-		sequenceCall {
-			inPin connection_28
-		}
-	}
-	literal Boolean "false" at (331, 523) size (49, 0) {
-		outPin {
-			connection_31
+			argumentPin brake at (left, 5) connection_20 {
+				bendpoints (0, 50), (-50, 50), (-50, 330)
+			}
+			returnPin at (right, 0) {
+				connection_19
+			}
+			sequenceCall {
+				inPin
+			}
 		}
 	}
 }

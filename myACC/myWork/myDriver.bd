@@ -2,7 +2,7 @@ classType myWork.myDriver
 blockdiagramSpecification Main {
 	methodBody drive {
 		outPin active {
-			connection_5, connection_6, connection_7, connection_9, connection_13
+			connection_5, connection_6, connection_7, connection_9
 		}
 	}
 	simpleIdentifier p at (561, 105) {
@@ -71,18 +71,8 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier acitvate at (551, 395) {
 		label at (0, -1)
-		outPin {
-			connection_14
-		}
-		sequenceCall {
+		outPin sequenceCall {
 			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.^active at (751, 395) {
-		label at (0, -1)
-		inPin connection_14
-		sequenceCall {
-			inPin connection_13
 		}
 	}
 }

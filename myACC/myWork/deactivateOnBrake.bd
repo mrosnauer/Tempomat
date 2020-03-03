@@ -1,0 +1,79 @@
+classType myWork.deactivateOnBrake
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_13
+		}
+	}
+	methodArgumentIdentifier calc.accActiveIn at (261, 365) {
+		label at (0, -1)
+		outPin {
+			connection_17
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	return at (891, 265) {
+		label at (0, 0)
+		inPin connection_15 {
+			bendpoints (30, 0), (30, -30)
+		}
+		sequenceCall {
+			inPin connection_1 {
+				bendpoints (90, 0), (90, -20)
+			}
+		}
+	}
+	methodArgumentIdentifier calc.brake at (241, 245) {
+		label at (0, -1)
+		outPin {
+			connection_5
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	greater at (411, 246) {
+		inPin connection_5
+		inPin connection_6 {
+			bendpoints (0, -20), (110, -20)
+		}
+		outPin {
+			connection_14
+		}
+	}
+	literal Numeric "0.0" at (251, 293) size (49, 0) {
+		outPin {
+			connection_6
+		}
+	}
+	ifElse at (641, 261) {
+		inPin connection_14 {
+			bendpoints (90, 0), (90, 10)
+		}
+		ifControlFlowOutPin {
+			connection_1
+		}
+		elseControlFlowOutPin {
+			connection_16
+		}
+		sequenceCall {
+			inPin connection_13
+		}
+	}
+	literal Boolean "false" at (771, 293) size (49, 0) {
+		outPin {
+			connection_15
+		}
+	}
+	return at (841, 365) {
+		label at (0, 0)
+		inPin connection_17
+		sequenceCall {
+			inPin connection_16 {
+				bendpoints (0, 50)
+			}
+		}
+	}
+}
