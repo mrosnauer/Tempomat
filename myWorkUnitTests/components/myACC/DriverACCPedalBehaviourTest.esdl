@@ -12,32 +12,32 @@ static class DriverACCPedalBehaviourTest {
 	public void inactiveDriver() {
 		const real power = 0.0;
 		const real brake = 0.0;
-		boolean putthrough = instance.calc(power, brake);
-		Assert.assertFalse(putthrough);
+		boolean passThrough = instance.calc(power, brake);
+		Assert.assertFalse(passThrough);
 	}
 	
 	@Test
 	public void brakingDriver() {
 		const real power = 0.0;
 		const real brake = 0.1;
-		boolean putthrough = instance.calc(power, brake);
-		Assert.assertTrue(putthrough);
+		boolean passThrough = instance.calc(power, brake);
+		Assert.assertTrue(passThrough);
 	}
 	
 	@Test
 	public void acceleratingDriver() {
 		const real power = 0.1;
 		const real brake = 0.0;
-		boolean putthrough = instance.calc(power, brake);
-		Assert.assertTrue(putthrough);
+		boolean passThrough = instance.calc(power, brake);
+		Assert.assertTrue(passThrough);
 	}
 	
 	@Test
 	public void accelertingAndBrakingDriver() {
 		const real power = 0.1;
 		const real brake = 0.1;
-		boolean putthrough = instance.calc(power, brake);
-		Assert.assertTrue(putthrough);
+		boolean passThrough = instance.calc(power, brake);
+		Assert.assertTrue(passThrough);
 	}
 	
 	
