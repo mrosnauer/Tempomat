@@ -5,19 +5,19 @@ blockdiagramSpecification Main {
 			connection_1, connection_59, connection_29, connection_66, connection_72, connection_70
 		}
 	}
-	simpleIdentifier resources.DriverMessages.powerDriver at (-59, 105) {
+	simpleIdentifier resources.DriverMessages.powerDriver at (581, 145) {
 		label at (0, -1)
 		outPin {
-			connection_10, connection_3
+			connection_10
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	simpleIdentifier resources.DriverMessages.brakeDriver at (-59, 185) {
+	simpleIdentifier resources.DriverMessages.brakeDriver at (571, 235) {
 		label at (0, -1)
 		outPin {
-			connection_12, connection_20, connection_7
+			connection_12
 		}
 		sequenceCall {
 			inPin
@@ -25,9 +25,7 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier resources.CarMessages.power at (721, 145) {
 		label at (0, -1)
-		inPin connection_10 {
-			bendpoints (0, 39)
-		}
+		inPin connection_10
 		sequenceCall {
 			inPin connection_9 {
 				bendpoints (70, 0), (70, -51), (200, -51), (200, -50)
@@ -36,9 +34,7 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier resources.CarMessages.brake at (731, 235) {
 		label at (0, -1)
-		inPin connection_12 {
-			bendpoints (0, 48)
-		}
+		inPin connection_12
 		sequenceCall {
 			inPin connection_11 {
 				bendpoints (70, 0), (70, 38), (200, 38), (200, 40)
@@ -46,9 +42,7 @@ blockdiagramSpecification Main {
 		}
 	}
 	ifElse at (331, 171) {
-		inPin connection_28 {
-			bendpoints (0, 10), (160, 10)
-		}
+		inPin connection_77
 		ifControlFlowOutPin {
 			connection_9, connection_11
 		}
@@ -57,40 +51,6 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin connection_1
-		}
-	}
-	or at (131, 146) {
-		inPin connection_4 {
-			bendpoints (40, 0)
-		}
-		inPin connection_8 {
-			bendpoints (40, 0)
-		}
-		outPin {
-			connection_28
-		}
-	}
-	greater at (51, 106) {
-		inPin connection_3
-		inPin connection_5 {
-			bendpoints (30, 0), (30, -20)
-		}
-		outPin {
-			connection_4
-		}
-	}
-	literal Numeric "0.0" at (-59, 143) size (49, 0) {
-		outPin {
-			connection_6, connection_5
-		}
-	}
-	less at (51, 166) {
-		inPin connection_6 {
-			bendpoints (30, 0), (30, 20)
-		}
-		inPin connection_7
-		outPin {
-			connection_8, connection_21
 		}
 	}
 	simpleIdentifier resources.CarMessages.power at (741, 355) {
@@ -122,9 +82,7 @@ blockdiagramSpecification Main {
 		label at (0, 1)
 		methodCall myWork.deactivateOnBrake.calc {
 			argumentPin accActiveIn at (left, 0) connection_51
-			argumentPin brake at (left, 5) connection_20 {
-				bendpoints (0, 50), (80, 50), (80, 330)
-			}
+			argumentPin brake at (left, 5) connection_81
 			returnPin at (right, 0) {
 				connection_67
 			}
@@ -133,11 +91,11 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier accButtonLogic_instance at (231, -29) size (14, 8) {
+	complexIdentifier accButtonLogic_instance at (351, -29) size (14, 8) {
 		label at (0, 1)
 		methodCall myWork.accButtonLogic.calc {
-			argumentPin driverAction at (left, 5) connection_21 {
-				bendpoints (0, 20), (-7, 20), (-7, 40), (106, 40), (106, -80), (110, -80), (110, -150)
+			argumentPin driverAction at (left, 5) connection_80 {
+				bendpoints (10, 0), (10, -150)
 			}
 			argumentPin accButtonAction at (left, 0) connection_38
 			returnPin at (right, 0) {
@@ -148,7 +106,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier resources.DriverMessages.accButtonPressed at (-59, -25) {
+	simpleIdentifier resources.DriverMessages.accButtonPressed at (-89, -25) {
 		label at (0, 9)
 		outPin {
 			connection_38
@@ -157,12 +115,12 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	literal Boolean "true" at (471, -7) size (49, 0) {
+	literal Boolean "true" at (591, -7) size (49, 0) {
 		outPin {
 			connection_50
 		}
 	}
-	if at (391, -29) {
+	if at (511, -29) {
 		inPin connection_30
 		ifControlFlowOutPin {
 			connection_49
@@ -171,7 +129,7 @@ blockdiagramSpecification Main {
 			inPin connection_29
 		}
 	}
-	simpleIdentifier internalActive at (571, -5) {
+	simpleIdentifier internalActive at (691, -5) {
 		label at (0, -1)
 		inPin connection_50
 		outPin sequenceCall {
@@ -237,7 +195,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.DriverMessages.accButtonOffPressed at (-59, -95) {
+	simpleIdentifier resources.DriverMessages.accButtonOffPressed at (-89, -95) {
 		label at (0, -1)
 		outPin {
 			connection_74
@@ -262,7 +220,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier internalActive at (841, 15) {
+	simpleIdentifier internalActive at (941, 15) {
 		label at (0, -1)
 		inPin outPin {
 			connection_71
@@ -271,7 +229,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.accActive at (951, 15) {
+	simpleIdentifier resources.CarMessages.accActive at (1051, 15) {
 		label at (0, -1)
 		inPin connection_71
 		sequenceCall {
@@ -290,6 +248,46 @@ blockdiagramSpecification Main {
 	literal Boolean "false" at (241, -97) size (49, 0) {
 		outPin {
 			connection_76
+		}
+	}
+	simpleIdentifier resources.DriverMessages.powerDriver at (-39, 175) {
+		label at (0, -1)
+		outPin {
+			connection_78
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (-39, 225) {
+		label at (0, -1)
+		outPin {
+			connection_79
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier driverACCPedalBehaviour_instance at (141, 171) size (14, 8) {
+		label at (0, 1)
+		methodCall myWork.driverACCPedalBehaviour.calc {
+			argumentPin power at (left, 0) connection_78
+			argumentPin brake at (left, 5) connection_79
+			returnPin at (right, 0) {
+				connection_80, connection_77
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (201, 515) {
+		label at (0, -1)
+		outPin {
+			connection_81
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }
