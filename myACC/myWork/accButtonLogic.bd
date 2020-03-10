@@ -2,7 +2,7 @@ classType myWork.accButtonLogic
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_7
+			connection_18, connection_14, connection_23
 		}
 	}
 	methodArgumentIdentifier calc.driverAction at (301, 165) {
@@ -14,7 +14,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	methodArgumentIdentifier calc.accButtonAction at (301, 235) {
+	methodArgumentIdentifier calc.accButtonOnPressed at (301, 235) {
 		label at (0, -1)
 		outPin {
 			connection_9
@@ -29,7 +29,7 @@ blockdiagramSpecification Main {
 			bendpoints (290, 0), (290, -50)
 		}
 		outPin {
-			connection_12
+			connection_15
 		}
 	}
 	not at (481, 161) {
@@ -38,11 +38,67 @@ blockdiagramSpecification Main {
 			connection_6
 		}
 	}
-	return at (831, 175) {
-		label at (0, 0)
-		inPin connection_12
+	methodArgumentIdentifier calc.accButtonOffPressed at (301, 305) {
+		label at (0, -1)
+		outPin {
+			connection_20
+		}
 		sequenceCall {
-			inPin connection_7
+			inPin
+		}
+	}
+	if at (771, 171) {
+		inPin connection_15
+		ifControlFlowOutPin {
+			connection_16
+		}
+		sequenceCall {
+			inPin connection_14
+		}
+	}
+	literal Boolean "true" at (851, 193) size (49, 0) {
+		outPin {
+			connection_17
+		}
+	}
+	return at (931, 195) {
+		label at (0, 0)
+		inPin connection_17
+		sequenceCall {
+			inPin connection_16
+		}
+	}
+	literal Boolean "false" at (721, 323) size (49, 0) {
+		outPin {
+			connection_22
+		}
+	}
+	if at (601, 301) {
+		inPin connection_20
+		ifControlFlowOutPin {
+			connection_21
+		}
+		sequenceCall {
+			inPin connection_18
+		}
+	}
+	return at (821, 325) {
+		label at (0, 0)
+		inPin connection_22
+		sequenceCall {
+			inPin connection_21
+		}
+	}
+	return at (661, 455) {
+		label at (0, 0)
+		inPin connection_24
+		sequenceCall {
+			inPin connection_23
+		}
+	}
+	literal Boolean "false" at (561, 453) size (49, 0) {
+		outPin {
+			connection_24
 		}
 	}
 }
