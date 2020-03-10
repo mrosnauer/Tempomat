@@ -9,34 +9,76 @@ static class DriverButtonActivationTest {
 	accButtonLogic instance;
 	
 	@Test
-	public void driverActionAndActive() {
-		boolean driverAction = true;
-		boolean buttonIn = true;
-		boolean accActiveOut = instance.calc(driverAction, buttonIn);
+	public void noActionNoButton() {
+		boolean driverAction = false;
+		boolean accButtonOnPressed = false;
+		boolean accButtonOffPressed = false;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
 		Assert.assertFalse(accActiveOut);
 	}
 	
 	@Test
-	public void noDriverActionAndButton() {
+	public void noActionOffButton() {
 		boolean driverAction = false;
-		boolean buttonIn = true;
-		boolean accActiveOut = instance.calc(driverAction, buttonIn);
+		boolean accButtonOnPressed = false;
+		boolean accButtonOffPressed = true;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		Assert.assertFalse(accActiveOut);
+	}
+	
+	@Test
+	public void noActionOnButton() {
+		boolean driverAction = false;
+		boolean accButtonOnPressed = true;
+		boolean accButtonOffPressed = false;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
 		Assert.assertTrue(accActiveOut);
 	}
 	
+	
 	@Test
-	public void driverActionAndNoButton() {
+	public void actionNoButton() {
 		boolean driverAction = true;
-		boolean buttonIn = false;
-		boolean accActiveOut = instance.calc(driverAction, buttonIn);
+		boolean accButtonOnPressed = false;
+		boolean accButtonOffPressed = false;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		Assert.assertFalse(accActiveOut);
+	}
+	
+	
+	@Test
+	public void noActionOnAndOffButton() {
+		boolean driverAction = false;
+		boolean accButtonOnPressed = true;
+		boolean accButtonOffPressed = true;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
 		Assert.assertFalse(accActiveOut);
 	}
 	
 	@Test
-	public void noDriverActionAndNoButton() {
-		boolean driverAction = false;
-		boolean buttonIn = false;
-		boolean accActiveOut = instance.calc(driverAction, buttonIn);
+	public void actionOffButton() {
+		boolean driverAction = true;
+		boolean accButtonOnPressed = false;
+		boolean accButtonOffPressed = true;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		Assert.assertFalse(accActiveOut);
+	}
+	
+	@Test
+	public void actionOnButton() {
+		boolean driverAction = true;
+		boolean accButtonOnPressed = true;
+		boolean accButtonOffPressed = false;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		Assert.assertFalse(accActiveOut);
+	}
+	
+	@Test
+	public void actionOnOffButton() {
+		boolean driverAction = true;
+		boolean accButtonOnPressed = true;
+		boolean accButtonOffPressed = true;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
 		Assert.assertFalse(accActiveOut);
 	}
 	

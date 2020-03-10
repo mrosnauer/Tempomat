@@ -2,7 +2,7 @@ classType myWork.myACC
 blockdiagramSpecification Main {
 	methodBody control {
 		outPin active {
-			connection_1, connection_59, connection_29, connection_66, connection_72, connection_70
+			connection_1, connection_59, connection_29, connection_66, connection_70
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (581, 145) {
@@ -91,25 +91,10 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier accButtonLogic_instance at (351, -29) size (14, 8) {
-		label at (0, 1)
-		methodCall myWork.accButtonLogic.calc {
-			argumentPin driverAction at (left, 5) connection_80 {
-				bendpoints (10, 0), (10, -150)
-			}
-			argumentPin accButtonAction at (left, 0) connection_38
-			returnPin at (right, 0) {
-				connection_30
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-	}
-	simpleIdentifier resources.DriverMessages.accButtonPressed at (-89, -25) {
+	simpleIdentifier resources.DriverMessages.accButtonPressed at (-89, -65) {
 		label at (0, 9)
 		outPin {
-			connection_38
+			connection_83
 		}
 		sequenceCall {
 			inPin
@@ -121,7 +106,9 @@ blockdiagramSpecification Main {
 		}
 	}
 	if at (511, -29) {
-		inPin connection_30
+		inPin connection_85 {
+			bendpoints (150, 0), (150, 70)
+		}
 		ifControlFlowOutPin {
 			connection_49
 		}
@@ -198,7 +185,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.DriverMessages.accButtonOffPressed at (-89, -95) {
 		label at (0, -1)
 		outPin {
-			connection_74
+			connection_82
 		}
 		sequenceCall {
 			inPin
@@ -209,15 +196,6 @@ blockdiagramSpecification Main {
 		inPin connection_67
 		outPin sequenceCall {
 			inPin connection_66
-		}
-	}
-	simpleIdentifier internalActive at (311, -95) {
-		label at (0, -1)
-		inPin connection_76
-		outPin sequenceCall {
-			inPin connection_75 {
-				bendpoints (60, 0), (60, -20)
-			}
 		}
 	}
 	simpleIdentifier internalActive at (941, 15) {
@@ -234,20 +212,6 @@ blockdiagramSpecification Main {
 		inPin connection_71
 		sequenceCall {
 			inPin connection_70
-		}
-	}
-	if at (121, -99) {
-		inPin connection_74
-		ifControlFlowOutPin {
-			connection_75
-		}
-		sequenceCall {
-			inPin connection_72
-		}
-	}
-	literal Boolean "false" at (241, -97) size (49, 0) {
-		outPin {
-			connection_76
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (-39, 175) {
@@ -274,7 +238,7 @@ blockdiagramSpecification Main {
 			argumentPin power at (left, 0) connection_78
 			argumentPin brake at (left, 5) connection_79
 			returnPin at (right, 0) {
-				connection_80, connection_77
+				connection_84, connection_77
 			}
 			sequenceCall {
 				inPin
@@ -288,6 +252,22 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	complexIdentifier accButtonLogic_instance_2 at (151, -99) size (14, 8) {
+		label at (0, 1)
+		methodCall myWork.accButtonLogic.calc {
+			argumentPin driverAction at (left, 5) connection_84 {
+				bendpoints (0, -70), (-190, -70), (-190, -220)
+			}
+			argumentPin accButtonOnPressed at (left, 3) connection_83
+			argumentPin accButtonOffPressed at (left, 0) connection_82
+			returnPin at (right, 0) {
+				connection_85
+			}
+			sequenceCall {
+				inPin
+			}
 		}
 	}
 }
