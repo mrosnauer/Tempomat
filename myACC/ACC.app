@@ -3,6 +3,7 @@ application {
 	class myWork.myDriver
 	class myWork.myACC
 	class myWork.automatedDriver
+	class myWork.AutomatedDriverTestBD
 }
 schedule {
 	startup {
@@ -13,5 +14,6 @@ schedule {
 		process myWork.automatedDriver.calc
 		process myWork.myACC.control
 		process myCar.myCar.calc
+		process myWork.AutomatedDriverTestBD.calc
 	}
 }

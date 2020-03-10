@@ -1,0 +1,136 @@
+classType myWork.AutomatedDriverTestBD
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_2, connection_4, connection_6, connection_8, connection_10, connection_12, connection_14, connection_1, connection_16
+		}
+	}
+	complexIdentifier AutomatedDriverTestSM_instance at (391, 261) size (49, 25) {
+		label at (0, 1)
+		methodCall myWork.AutomatedDriverTestSM.automatedDriverTestSMStatemachineTrigger {
+			methodVoidPin at (top, 0) sequenceCall at (-14, -52) {
+				inPin connection_1
+			}
+		}
+		elementCall (myWork.AutomatedDriverTestSM.brakeDriver) {
+			argumentPin at (left, 3) connection_3
+			sequenceCall at (-320, -34) {
+				inPin connection_2
+			}
+		}
+		elementCall (myWork.AutomatedDriverTestSM.accelDriver) {
+			argumentPin at (left, 6) connection_7
+			sequenceCall at (-320, -14) {
+				inPin connection_6
+			}
+		}
+		elementCall (myWork.AutomatedDriverTestSM.accActive) {
+			argumentPin at (left, 9) connection_5
+			sequenceCall at (-320, -14) {
+				inPin connection_4
+			}
+		}
+		elementCall (myWork.AutomatedDriverTestSM.vehicleSpeed) {
+			argumentPin at (left, 12) connection_9
+			sequenceCall at (-320, -14) {
+				inPin connection_8
+			}
+		}
+		elementCall (myWork.AutomatedDriverTestSM.targetSpeed) {
+			argumentPin at (left, 15) connection_11
+			sequenceCall at (-320, -14) {
+				inPin connection_10
+			}
+		}
+		elementCall (myWork.AutomatedDriverTestSM.carAccPos) {
+			argumentPin at (left, 18) connection_13
+			sequenceCall at (-330, 6) {
+				inPin connection_12
+			}
+		}
+		elementCall (myWork.AutomatedDriverTestSM.carBrakePos) {
+			argumentPin at (left, 21) connection_15
+			sequenceCall at (-340, 16) {
+				inPin connection_14
+			}
+		}
+		elementCall (myWork.AutomatedDriverTestSM.testResult) {
+			returnPin at (right, 12) {
+				connection_17
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (211, 295) {
+		label at (0, -1)
+		outPin {
+			connection_3
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.powerDriver at (211, 325) {
+		label at (0, -1)
+		outPin {
+			connection_7
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.accActive at (211, 355) {
+		label at (0, -1)
+		outPin {
+			connection_5
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (211, 385) {
+		label at (0, -1)
+		outPin {
+			connection_9
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeed at (211, 415) {
+		label at (0, -1)
+		outPin {
+			connection_11
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.power at (211, 445) {
+		label at (0, -1)
+		outPin {
+			connection_13
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.brake at (211, 475) {
+		label at (0, -1)
+		outPin {
+			connection_15
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier testResult at (981, 385) {
+		label at (0, -1)
+		inPin connection_17
+		outPin sequenceCall {
+			inPin connection_16
+		}
+	}
+}
