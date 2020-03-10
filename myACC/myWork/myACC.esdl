@@ -16,7 +16,6 @@ writes resources.CarMessages.power, resources.CarMessages.brake, CarMessages.acc
 
 	@generated("blockdiagram")
 	@thread
-	@error("blockdiagram")
 	public void control() {
 		if (driverACCPedalBehaviour_instance.calc(DriverMessages.powerDriver, DriverMessages.brakeDriver)) {
 			CarMessages.power = DriverMessages.powerDriver; // Main/control 1/if-then 1
@@ -26,6 +25,10 @@ writes resources.CarMessages.power, resources.CarMessages.brake, CarMessages.acc
 			CarMessages.brake = 0.0; // Main/control 1/if-else 2
 		} // Main/control 1
 		target_speed = incDecTargetSpeed_instance.calc(DriverMessages.up, DriverMessages.down, target_speed); // Main/control 2
+		if (accButtonLogic_instance.calc(driverACCPedalBehaviour_instance.calc(DriverMessages.powerDriver, DriverMessages.brakeDriver), DriverMessages.accButtonPressed)) {
+			internalActive = true; // Main/control 3/if-then 1
+		} // Main/control 3
+		internalActive = deactivateOnBrake_instance.calc(internalActive, DriverMessages.brakeDriver); // Main/control 4
 		if (DriverMessages.accButtonOffPressed) {
 			internalActive = false; // Main/control 5/if-then 1
 		} // Main/control 5
