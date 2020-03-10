@@ -23,7 +23,7 @@ using Impl {
 	characteristic contType TrackSize = 1000.0;
 	contType v = 0.0;
 	@get
-	real accel;
+	real accel = 0.0;
 
 	@generated("blockdiagram")
 	public contType vCar(contType in powerCtrl, contType in brakeCtrl) {

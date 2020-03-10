@@ -1,0 +1,102 @@
+classType myWork.velocityRegulation
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_16
+		}
+	}
+	simpleIdentifier curve_cont_table at (661, 231) {
+		label at (0, 1)
+		inPin connection_19 {
+			bendpoints (40, 0), (40, -60), (330, -60)
+		}
+		outPin {
+			connection_25
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	subtraction at (291, 226) {
+		inPin connection_22 {
+			bendpoints (100, 0), (100, 30)
+		}
+		inPin connection_23 {
+			bendpoints (100, 0), (100, -50)
+		}
+		outPin {
+			connection_19, connection_14
+		}
+	}
+	literal Numeric "0.0" at (301, 333) size (49, 0) {
+		outPin {
+			connection_15
+		}
+	}
+	greater at (391, 236) {
+		inPin connection_14
+		inPin connection_15 {
+			bendpoints (20, 0), (20, -80)
+		}
+		outPin {
+			connection_17
+		}
+	}
+	ifElse at (501, 261) {
+		inPin connection_17 {
+			bendpoints (30, 0), (30, 20)
+		}
+		ifControlFlowOutPin {
+			connection_24
+		}
+		elseControlFlowOutPin {
+			connection_26
+		}
+		sequenceCall at (-10, -30) {
+			inPin connection_16
+		}
+	}
+	methodArgumentIdentifier calc.targetspeed at (41, 195) {
+		label at (0, -1)
+		outPin {
+			connection_22
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc.v at (41, 295) {
+		label at (0, -1)
+		outPin {
+			connection_23
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	return at (841, 245) {
+		label at (0, 0)
+		inPin connection_25
+		sequenceCall at (-10, -14) {
+			inPin connection_24 {
+				bendpoints (0, -70), (280, -70)
+			}
+		}
+	}
+	return at (451, 385) {
+		label at (0, 0)
+		inPin connection_36 {
+			bendpoints (40, 0), (40, -30)
+		}
+		sequenceCall at (-10, -34) {
+			inPin connection_26 {
+				bendpoints (0, 30), (-100, 30), (-100, 60)
+			}
+		}
+	}
+	literal Numeric "100.0" at (281, 413) size (79, 0) {
+		outPin {
+			connection_36
+		}
+	}
+}
