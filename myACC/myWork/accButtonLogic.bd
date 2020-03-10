@@ -2,7 +2,7 @@ classType myWork.accButtonLogic
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_18, connection_14, connection_23
+			connection_18, connection_14, connection_34, connection_23
 		}
 	}
 	methodArgumentIdentifier calc.driverAction at (301, 165) {
@@ -14,19 +14,24 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	methodArgumentIdentifier calc.accButtonOnPressed at (301, 235) {
+	methodArgumentIdentifier calc.accButtonOnPressed at (301, 205) {
 		label at (0, -1)
 		outPin {
-			connection_9
+			connection_26
 		}
 		sequenceCall {
 			inPin
 		}
 	}
 	and at (691, 166) {
-		inPin connection_6
-		inPin connection_9 {
-			bendpoints (290, 0), (290, -50)
+		inPin connection_29 {
+			bendpoints (140, 0), (140, 40)
+		}
+		inPin connection_25 {
+			bendpoints (0, 10)
+		}
+		inPin connection_26 {
+			bendpoints (330, 0), (330, -20)
 		}
 		outPin {
 			connection_15
@@ -35,7 +40,7 @@ blockdiagramSpecification Main {
 	not at (481, 161) {
 		inPin connection_5
 		outPin {
-			connection_6
+			connection_25
 		}
 	}
 	methodArgumentIdentifier calc.accButtonOffPressed at (301, 305) {
@@ -50,7 +55,7 @@ blockdiagramSpecification Main {
 	if at (771, 171) {
 		inPin connection_15
 		ifControlFlowOutPin {
-			connection_16
+			connection_30, connection_32, connection_16
 		}
 		sequenceCall {
 			inPin connection_14
@@ -99,6 +104,91 @@ blockdiagramSpecification Main {
 	literal Boolean "false" at (561, 453) size (49, 0) {
 		outPin {
 			connection_24
+		}
+	}
+	methodArgumentIdentifier calc.v at (941, 245) {
+		label at (0, -1)
+		outPin {
+			connection_31
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier previousButtonPressed at (291, 125) {
+		label at (0, -1)
+		inPin outPin {
+			connection_28
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	not at (491, 121) {
+		inPin connection_28
+		outPin {
+			connection_29
+		}
+	}
+	simpleIdentifier targetSpeed at (1021, 245) {
+		label at (0, -1)
+		inPin connection_31
+		outPin sequenceCall {
+			inPin connection_30 {
+				bendpoints (0, 50)
+			}
+		}
+	}
+	simpleIdentifier previousButtonPressed at (931, 115) {
+		label at (0, -1)
+		inPin connection_33 {
+			bendpoints (40, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_32 {
+				bendpoints (0, -40), (100, -40)
+			}
+		}
+	}
+	literal Boolean "true" at (841, 103) size (49, 0) {
+		outPin {
+			connection_33
+		}
+	}
+	if at (591, 21) {
+		inPin connection_36
+		ifControlFlowOutPin {
+			connection_38
+		}
+		sequenceCall {
+			inPin connection_34
+		}
+	}
+	methodArgumentIdentifier calc.accButtonOnPressed at (481, 25) {
+		label at (0, -1)
+		outPin {
+			connection_37
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	not at (541, 21) {
+		inPin connection_37
+		outPin {
+			connection_36
+		}
+	}
+	literal Boolean "false" at (771, 43) size (49, 0) {
+		outPin {
+			connection_39
+		}
+	}
+	simpleIdentifier previousButtonPressed at (831, 45) {
+		label at (0, -1)
+		inPin connection_39
+		outPin sequenceCall {
+			inPin connection_38
 		}
 	}
 }

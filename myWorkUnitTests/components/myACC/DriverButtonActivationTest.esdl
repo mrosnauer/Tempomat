@@ -13,7 +13,8 @@ static class DriverButtonActivationTest {
 		boolean driverAction = false;
 		boolean accButtonOnPressed = false;
 		boolean accButtonOffPressed = false;
-		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		real speed = 0.0;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed, speed);
 		Assert.assertFalse(accActiveOut);
 	}
 	
@@ -22,7 +23,8 @@ static class DriverButtonActivationTest {
 		boolean driverAction = false;
 		boolean accButtonOnPressed = false;
 		boolean accButtonOffPressed = true;
-		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		real speed = 0.0;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed, speed);
 		Assert.assertFalse(accActiveOut);
 	}
 	
@@ -31,7 +33,8 @@ static class DriverButtonActivationTest {
 		boolean driverAction = false;
 		boolean accButtonOnPressed = true;
 		boolean accButtonOffPressed = false;
-		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		real speed = 0.0;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed, speed);
 		Assert.assertTrue(accActiveOut);
 	}
 	
@@ -41,7 +44,8 @@ static class DriverButtonActivationTest {
 		boolean driverAction = true;
 		boolean accButtonOnPressed = false;
 		boolean accButtonOffPressed = false;
-		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		real speed = 0.0;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed, speed);
 		Assert.assertFalse(accActiveOut);
 	}
 	
@@ -51,7 +55,8 @@ static class DriverButtonActivationTest {
 		boolean driverAction = false;
 		boolean accButtonOnPressed = true;
 		boolean accButtonOffPressed = true;
-		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		real speed = 0.0;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed, speed);
 		Assert.assertFalse(accActiveOut);
 	}
 	
@@ -60,7 +65,8 @@ static class DriverButtonActivationTest {
 		boolean driverAction = true;
 		boolean accButtonOnPressed = false;
 		boolean accButtonOffPressed = true;
-		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		real speed = 0.0;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed, speed);
 		Assert.assertFalse(accActiveOut);
 	}
 	
@@ -69,7 +75,8 @@ static class DriverButtonActivationTest {
 		boolean driverAction = true;
 		boolean accButtonOnPressed = true;
 		boolean accButtonOffPressed = false;
-		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		real speed = 0.0;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed, speed);
 		Assert.assertFalse(accActiveOut);
 	}
 	
@@ -78,7 +85,9 @@ static class DriverButtonActivationTest {
 		boolean driverAction = true;
 		boolean accButtonOnPressed = true;
 		boolean accButtonOffPressed = true;
-		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed);
+		real speed = 0.0;
+		boolean accActiveOut = instance.calc(driverAction, accButtonOnPressed, accButtonOffPressed, speed);
+		Assert.assertDoubleEqual(instance.targetSpeed, speed);
 		Assert.assertFalse(accActiveOut);
 	}
 	

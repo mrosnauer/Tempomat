@@ -2,7 +2,7 @@ classType myWork.myACC
 blockdiagramSpecification Main {
 	methodBody control {
 		outPin active {
-			connection_1, connection_59, connection_29, connection_66, connection_70
+			connection_1, connection_59, connection_29, connection_66, connection_70, connection_91
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (551, 145) {
@@ -106,7 +106,9 @@ blockdiagramSpecification Main {
 		}
 	}
 	if at (541, -39) {
-		inPin connection_85
+		inPin connection_85 {
+			bendpoints (90, 0)
+		}
 		ifControlFlowOutPin {
 			connection_49
 		}
@@ -252,20 +254,64 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	complexIdentifier accButtonLogic_instance_2 at (201, -39) size (24, 10) {
+	complexIdentifier accButtonLogic_instance_2 at (201, -39) size (24, 12) {
 		label at (0, 1)
 		methodCall myWork.accButtonLogic.calc {
-			argumentPin driverAction at (left, 5) connection_84 {
-				bendpoints (0, -70), (-190, -70), (-190, -160)
+			argumentPin driverAction at (left, 9) connection_84 {
+				bendpoints (0, -40), (-70, -40), (-70, -120)
 			}
 			argumentPin accButtonOnPressed at (left, 3) connection_83
-			argumentPin accButtonOffPressed at (left, 0) connection_82
-			returnPin at (right, 0) {
+			argumentPin accButtonOffPressed at (left, 1) connection_82 {
+				bendpoints (110, 0), (110, 10)
+			}
+			argumentPin v at (left, 7) connection_86
+			returnPin at (right, 1) {
 				connection_85
 			}
 			sequenceCall {
 				inPin
 			}
+		}
+		elementCall (myWork.accButtonLogic.targetSpeed) {
+			returnPin at (right, 9) {
+				connection_94
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myWork.accButtonLogic.previousButtonPressed) {
+			returnPin at (right, 7) {
+				connection_92
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (-69, 35) {
+		label at (0, -1)
+		outPin {
+			connection_86
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeed at (701, 55) {
+		label at (0, -1)
+		inPin connection_94
+		sequenceCall {
+			inPin connection_93
+		}
+	}
+	if at (541, 31) {
+		inPin connection_92
+		ifControlFlowOutPin {
+			connection_93
+		}
+		sequenceCall {
+			inPin connection_91
 		}
 	}
 }
