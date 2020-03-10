@@ -2,7 +2,7 @@ package myCar;
 import resources.CarMessages;
 
 static class myCar
-writes CarMessages.v
+writes CarMessages.v, CarMessages.accel
 reads CarMessages.power, CarMessages.brake {
 	myDrive_2 myVehicle;
 
@@ -10,5 +10,6 @@ reads CarMessages.power, CarMessages.brake {
 	@thread
 	public void calc() {
 		CarMessages.v = myVehicle.vCar(CarMessages.power, CarMessages.brake); // Main/calc 1
+		CarMessages.accel = myVehicle.accel; // Main/calc 2
 	}
 }

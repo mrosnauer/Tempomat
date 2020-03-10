@@ -2,7 +2,7 @@ classType myCar.myCar
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_11
+			connection_11, connection_12
 		}
 	}
 	complexIdentifier myVehicle at (301, 151) size (38, 14) backgroundColor #ffffff {
@@ -17,13 +17,11 @@ blockdiagramSpecification Main {
 				inPin
 			}
 		}
-		elementCall (myCar.myDrive_2.momentum) {
-			returnPin at (right, 2) sequenceCall {
-				inPin
+		elementCall (myCar.myDrive_2.accel) {
+			returnPin at (right, 0) {
+				connection_13
 			}
-		}
-		elementCall (myCar.myDrive_2.s) {
-			returnPin at (right, 9) sequenceCall {
+			sequenceCall at (0, 0) {
 				inPin
 			}
 		}
@@ -51,6 +49,13 @@ blockdiagramSpecification Main {
 		inPin connection_6
 		sequenceCall {
 			inPin connection_11
+		}
+	}
+	simpleIdentifier resources.CarMessages.accel at (771, 155) {
+		label at (0, -1)
+		inPin connection_13
+		sequenceCall {
+			inPin connection_12
 		}
 	}
 }
